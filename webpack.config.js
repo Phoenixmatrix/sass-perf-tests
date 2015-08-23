@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -37,12 +38,13 @@ module.exports = {
         include: path.join(__dirname, 'src/components')
       },
       {
-        test: /\.less$/,
-        loader: 'style!css?sourceMap!less?sourceMap=true'
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap=true')
       }
     ]
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('[name].css')
   ]
 };
