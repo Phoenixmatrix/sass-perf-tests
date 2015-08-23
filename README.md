@@ -1,2 +1,2 @@
-# phoenixmatrix-seed
-Seed application including Babel, React, and Webpack with hot reload development server configured
+# SASS compilation strategy performance test
+Experiment with various ways of structuring SASS for compile performance during development.
